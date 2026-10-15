@@ -34,8 +34,25 @@ firstPromise
   });
 
 const secondPromise = new Promise((resolve, reject) => {
+  let leftClicked = false;
+  let rightClicked = false;
+
+  document.addEventListener('auxclick', (clickEvent) => {
+    if (clickEvent.button === 2) {
+      rightClicked = true;
+    }
+
+    if (leftClicked || rightClicked) {
+      resolve('Second promise was resolved');
+    }
+  });
+
   document.addEventListener('click', (clickEvent) => {
-    if (clickEvent.button === 2 || clickEvent.button === 0) {
+    if (clickEvent.button === 0) {
+      leftClicked = true;
+    }
+
+    if (leftClicked || rightClicked) {
       resolve('Second promise was resolved');
     }
   });
