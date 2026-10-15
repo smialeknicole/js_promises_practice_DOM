@@ -37,7 +37,7 @@ const secondPromise = new Promise((resolve, reject) => {
   let leftClicked = false;
   let rightClicked = false;
 
-  document.addEventListener('auxclick', (clickEvent) => {
+  document.addEventListener('contextmenu', (clickEvent) => {
     if (clickEvent.button === 2) {
       rightClicked = true;
     }
@@ -71,7 +71,7 @@ const thirdPromise = new Promise((resolve, reject) => {
   let leftClicked = false;
   let rightClicked = false;
 
-  document.addEventListener('auxclick', (clickEvent) => {
+  document.addEventListener('contextmenu', (clickEvent) => {
     if (clickEvent.button === 2) {
       rightClicked = true;
     }
