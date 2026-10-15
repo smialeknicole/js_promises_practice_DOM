@@ -59,6 +59,12 @@ const thirdPromise = new Promise((resolve, reject) => {
       rightClicked = true;
     }
 
+    if (leftClicked && rightClicked) {
+      resolve('Third promise was resolved');
+    }
+  });
+
+  document.addEventListener('click', (clickEvent) => {
     if (clickEvent.button === 0) {
       leftClicked = true;
     }
@@ -67,7 +73,6 @@ const thirdPromise = new Promise((resolve, reject) => {
       resolve('Third promise was resolved');
     }
   });
-
 });
 
 thirdPromise.then((message) => {
